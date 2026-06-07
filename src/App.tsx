@@ -23,9 +23,9 @@ function App() {
     <div className="background">
       {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
       {/* <BGEffect /> */}
-      <>
+      {/* <>
         <SlotMachine />
-      </>
+      </> */}
       <div className="card-view">
         <LazyDiv className="card-group">
           {/* 메인 커버 섹션 */}
