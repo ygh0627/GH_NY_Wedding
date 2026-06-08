@@ -6,11 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: #e5dece;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #e6dfcf;
 }
 
 .intro-video {
   width: 200%;
   object-fit: contain;
 }
+// background-color: #e5dece;
