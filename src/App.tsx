@@ -11,6 +11,8 @@ import { LazyDiv } from "./component/lazyDiv"
 import { ShareButton } from "./component/shareButton"
 import { STATIC_ONLY } from "./env"
 import SlotMachine from "./component/slotMachine/slotMachine"
+import IntroVideo from "./component/introVideo/IntroVideo"
+import { useState } from "react"
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
@@ -19,13 +21,20 @@ import SlotMachine from "./component/slotMachine/slotMachine"
  * @returns {JSX.Element} 애플리케이션 화면
  */
 function App() {
+
+  const [introFinished, setIntroFinished] = useState(false)
+
+  if (!introFinished) {
+    return (
+      <IntroVideo
+        onFinished={() => setIntroFinished(true)}
+      />
+    )
+  }
   return (
     <div className="background">
       {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
       {/* <BGEffect /> */}
-      {/* <>
-        <SlotMachine />
-      </> */}
       <div className="card-view">
         <LazyDiv className="card-group">
           {/* 메인 커버 섹션 */}

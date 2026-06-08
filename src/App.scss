@@ -9,10 +9,11 @@
 @use "./component/guestbook";
 @use "./component/modal";
 @use "./component/shareButton";
+@use "./component/introVideo";
 
 :root {
   --theme-color: #ff8585;
-  --theme-bg-color: #ffe7e7;
+  --theme-bg-color: #fffff8;
   --alt-color: #c28080;
   --alt-bg-color: #f4f0f0;
   --dark-color: #282c34;
