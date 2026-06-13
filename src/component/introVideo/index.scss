@@ -9,14 +9,11 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-image: url("../../images/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #e6dfcf;
 }
 
 .intro-video {
-  width: 200%;
+  // width: 200%;
   object-fit: contain;
   transform: translateY(-25px);
 }

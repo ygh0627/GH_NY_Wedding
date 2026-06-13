@@ -46,6 +46,10 @@ function App() {
           onStart={() => setStarted(true)}
         />
       </>
+      // <IntroVideo
+      //   started={started}
+      //   onFinished={() => setIntroFinished(true)}
+      // />
     )
   }
   return (

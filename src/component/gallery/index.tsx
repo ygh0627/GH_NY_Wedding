@@ -216,7 +216,6 @@ export const Gallery = () => {
       const status = statusRef.current
 
       if (status === "clicked") {
-        e.preventDefault()
         const xMove =
           e.targetTouches[0].clientX - dragOptionRef.current.startingClientX
         const yMove =
