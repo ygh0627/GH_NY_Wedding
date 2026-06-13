@@ -12,6 +12,7 @@ import { ShareButton } from "./component/shareButton"
 import { STATIC_ONLY } from "./env"
 import IntroVideo from "./component/introVideo/IntroVideo"
 import { useState } from "react"
+import { StartOverlay } from "./component/startOverlay"
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
@@ -22,12 +23,29 @@ import { useState } from "react"
 function App() {
 
   const [introFinished, setIntroFinished] = useState(false)
+  const [started, setStarted] = useState(false)
+
+  // if (!started) {
+  //   return (
+  //     <StartOverlay
+  //       onStart={() => setStarted(true)}
+  //     />
+  //   );
+  // }
+
 
   if (!introFinished) {
     return (
-      <IntroVideo
-        onFinished={() => setIntroFinished(true)}
-      />
+      <>
+        <IntroVideo
+          started={started}
+          onFinished={() => setIntroFinished(true)}
+        />
+        <StartOverlay
+          visible={!started}
+          onStart={() => setStarted(true)}
+        />
+      </>
     )
   }
   return (

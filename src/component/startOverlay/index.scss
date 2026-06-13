@@ -1,0 +1,21 @@
+.start-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+
+  opacity: 1;
+  transition: opacity 0.6s ease;
+
+  z-index: 99999;
+}
+
+.start-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

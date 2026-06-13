@@ -10,6 +10,7 @@
 @use "./component/modal";
 @use "./component/shareButton";
 @use "./component/introVideo";
+@use "./component/startOverlay";
 
 :root {
   --theme-color: #ff8585;
