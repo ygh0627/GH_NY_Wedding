@@ -112,7 +112,7 @@ export const Calendar = () => {
               key={i}
               className={classes.length ? classes.join(" ") : undefined}
             >
-              <span>{date}</span>
+              <span style={isWeddingDate ? { color: "white" } : {}}>{date}</span>
               {isWeddingDate && <div className="heart" />}
             </div>
           )

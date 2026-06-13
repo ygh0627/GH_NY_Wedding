@@ -24,7 +24,6 @@
 
       &.wedding-date {
         position: relative;
-
         > span {
           z-index: 1;
         }
@@ -33,6 +32,7 @@
           width: 50%;
           height: 50%;
           background: var(--theme-bg-color);
+          background: #60141d;
           top: 35%;
           left: 25%;
           position: absolute;
@@ -47,6 +47,7 @@
             left: 0%;
             border-radius: 50%;
             background: var(--theme-bg-color);
+            background: #60141d;
           }
           &::after {
             content: "";
@@ -56,6 +57,7 @@
             left: -50%;
             border-radius: 50%;
             background: var(--theme-bg-color);
+            background: #60141d;
           }
         }
       }
