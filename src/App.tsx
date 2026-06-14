@@ -13,6 +13,7 @@ import { STATIC_ONLY } from "./env"
 import IntroVideo from "./component/introVideo/IntroVideo"
 import { useState } from "react"
 import { StartOverlay } from "./component/startOverlay"
+import { supabase } from "./lib/supabase"
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
@@ -32,7 +33,17 @@ function App() {
   //     />
   //   );
   // }
+  const testStorage = async () => {
+    const { data, error } = await supabase.storage.listBuckets();
 
+    console.log("buckets:", data);
+    console.log("error:", error);
+  };
+
+  console.log("URL:", import.meta.env.VITE_SUPABASE_URL);
+  console.log("KEY:", import.meta.env.VITE_SUPABASE_ANON_KEY);
+
+  testStorage();
 
   if (!introFinished) {
     return (
@@ -55,7 +66,7 @@ function App() {
   return (
     <div className="background">
       {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
-      <BGEffect />
+      {/* <BGEffect /> */}
       <div className="card-view">
         <LazyDiv className="card-group">
           {/* 메인 커버 섹션 */}

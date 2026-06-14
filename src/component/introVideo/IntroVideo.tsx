@@ -30,6 +30,7 @@ export default function IntroVideo({
         <div
             className={`intro-container ${fadeOut ? "fade-out" : ""
                 }`}
+            onClick={handleEnd}
         >
             <video
                 ref={videoRef}

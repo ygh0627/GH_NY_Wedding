@@ -18,7 +18,7 @@ export const Information1 = () => {
         <div className="content">
           식사시간: 12시 00분 ~ 14시 00분
           <br />
-          장소: 4층 연회장
+          장소: 3층 연회장
         </div>
       </div>
     </>
@@ -37,13 +37,13 @@ export const Information2 = () => {
     <>
       <div className="info-card">
         <div className="label">마음 전하기</div>
-        <div className="content">
+        {/* <div className="content">
           참석이 어려워 직접 축하해주지 못하는
           <br />
           분들을 위해 계좌번호를 기재하였습니다.
           <br />
           넓은 마음으로 양해 부탁드립니다.
-        </div>
+        </div> */}
 
         <div className="break" />
 
@@ -130,24 +130,23 @@ export const Information2 = () => {
  */
 export const Information = () => {
   // 정적 모드일 경우 참석 의사 전달 기능을 제외합니다.
-  if (STATIC_ONLY) {
-    return (
-      <>
-        <LazyDiv className="card information">
-          <Information1 />
-        </LazyDiv>
-        <LazyDiv className="card information">
-          <Information2 />
-        </LazyDiv>
-      </>
-    )
-  }
+  // if (STATIC_ONLY) {
+  //   return (
+  //     <>
+  //       <LazyDiv className="card information">
+  //         <Information1 />
+  //       </LazyDiv>
+  //       <LazyDiv className="card information">
+  //         <Information2 />
+  //       </LazyDiv>
+  //     </>
+  //   )
+  // }
 
   return (
     <LazyDiv className="card information">
       <Information1 />
       <Information2 />
-      <AttendanceInfo />
     </LazyDiv>
   )
 }
