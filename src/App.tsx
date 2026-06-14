@@ -11,9 +11,10 @@ import { LazyDiv } from "./component/lazyDiv"
 import { ShareButton } from "./component/shareButton"
 import { STATIC_ONLY } from "./env"
 import IntroVideo from "./component/introVideo/IntroVideo"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { StartOverlay } from "./component/startOverlay"
 import { supabase } from "./lib/supabase"
+import { UploadSection } from "./component/upload"
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
@@ -33,17 +34,21 @@ function App() {
   //     />
   //   );
   // }
-  const testStorage = async () => {
-    const { data, error } = await supabase.storage.listBuckets();
 
-    console.log("buckets:", data);
-    console.log("error:", error);
-  };
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
 
-  console.log("URL:", import.meta.env.VITE_SUPABASE_URL);
-  console.log("KEY:", import.meta.env.VITE_SUPABASE_ANON_KEY);
-
-  testStorage();
+    if (params.get("scrollTo") === "upload") {
+      setIntroFinished(true)
+      setStarted(true)
+      console.log(document.getElementById("upload-section"))
+      setTimeout(() => {
+        document.getElementById("upload-section")?.scrollIntoView({
+          behavior: "smooth",
+        })
+      }, 100)
+    }
+  }, []);
 
   if (!introFinished) {
     return (
@@ -63,10 +68,10 @@ function App() {
       // />
     )
   }
+
+
   return (
     <div className="background">
-      {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
-      {/* <BGEffect /> */}
       <div className="card-view">
         <LazyDiv className="card-group">
           {/* 메인 커버 섹션 */}
@@ -89,15 +94,13 @@ function App() {
           <Location />
         </LazyDiv>
 
-        <LazyDiv className="card-group">
+        <LazyDiv id="upload-section" className="card-group">
           {/* 축의금 및 연락처 정보 섹션 */}
           <Information />
           {/* 방명록 섹션 (정적 모드가 아닐 때만 표시) */}
           {STATIC_ONLY && <GuestBook />}
+          <UploadSection />
         </LazyDiv>
-
-        {/* 카카오톡/링크 공유 버튼 */}
-        {/* <ShareButton /> */}
       </div>
     </div>
   )
