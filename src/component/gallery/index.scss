@@ -12,11 +12,11 @@ $transition-duration: 0.3s;
 }
 
 .gallery {
+  touch-action: pan-x pan-y;
   .carousel-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    touch-action: pan-x pan-y;
     .carousel {
       width: $gallery-width;
       overflow: hidden;
