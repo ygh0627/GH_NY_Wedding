@@ -52,6 +52,7 @@ export default function IntroVideo({
                     type="video/mp4"
                 />
             </video>
+            <div className="video-overlay" />
         </div>
     )
 }

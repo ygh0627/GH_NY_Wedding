@@ -24,4 +24,11 @@
     display: none !important;
   }
 }
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+}
 // background-color: #e5dece;
