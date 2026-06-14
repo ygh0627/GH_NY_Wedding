@@ -27,13 +27,19 @@ function App() {
   const [introFinished, setIntroFinished] = useState(false)
   const [started, setStarted] = useState(false)
 
-  // if (!started) {
-  //   return (
-  //     <StartOverlay
-  //       onStart={() => setStarted(true)}
-  //     />
-  //   );
-  // }
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handleStart = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.play().then(() => {
+      video.muted = false;
+    }).catch(console.error);
+
+    setStarted(true);
+  }
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -56,10 +62,11 @@ function App() {
         <IntroVideo
           started={started}
           onFinished={() => setIntroFinished(true)}
+          videoRef={videoRef}
         />
         <StartOverlay
           visible={!started}
-          onStart={() => setStarted(true)}
+          onStart={handleStart}
         />
       </>
       // <IntroVideo
