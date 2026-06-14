@@ -17,5 +17,11 @@
   height: 120%;
   object-fit: cover;
   transform: translateY(-25px);
+
+  &::-webkit-media-controls,
+  &::-webkit-media-controls-enclosure,
+  &::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+  }
 }
 // background-color: #e5dece;
