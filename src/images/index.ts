@@ -9,6 +9,11 @@ import image7 from "./image7.webp"
 import image8 from "./image8.webp"
 import image9 from "./image9.webp"
 import image10 from "./image10.webp"
+import image11 from "./image11.webp"
+import image12 from "./image12.webp"
+import image13 from "./image13.webp"
+import image14 from "./image14.webp"
+import image15 from "./image15.webp"
 
 /**
  * 메인 커버 이미지
@@ -29,4 +34,9 @@ export const GALLERY_IMAGES = [
   image8,
   image9,
   image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
 ]
