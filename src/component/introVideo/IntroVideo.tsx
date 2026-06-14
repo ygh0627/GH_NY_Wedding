@@ -23,7 +23,13 @@ export default function IntroVideo({
     useEffect(() => {
         if (!started) return;
 
-        videoRef.current?.play().catch(console.error);
+        const video = videoRef.current;
+        if (!video) return;
+        video.muted = true; // 처음엔 muted로 시작 (브라우저 정책 통과)
+
+        video.play().then(() => {
+            video.muted = false; // 재생 시작되면 바로 소리 켜기
+        }).catch(console.error);
     }, [started]);
 
     return (
@@ -34,6 +40,7 @@ export default function IntroVideo({
         >
             <video
                 ref={videoRef}
+                muted
                 playsInline
                 className="intro-video"
                 onEnded={handleEnd}
