@@ -62,12 +62,12 @@ function App() {
         <IntroVideo
           started={started}
           onFinished={() => setIntroFinished(true)}
-          videoRef={videoRef}
+        // videoRef={videoRef}
         />
-        <StartOverlay
+        {/* <StartOverlay
           visible={!started}
           onStart={handleStart}
-        />
+        /> */}
       </>
       // <IntroVideo
       //   started={started}

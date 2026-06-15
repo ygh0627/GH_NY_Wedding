@@ -20,6 +20,7 @@
 
   &::-webkit-media-controls,
   &::-webkit-media-controls-enclosure,
+  ::-webkit-media-controls-panel,
   &::-webkit-media-controls-overlay-play-button {
     display: none !important;
   }

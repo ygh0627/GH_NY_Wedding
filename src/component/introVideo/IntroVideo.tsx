@@ -2,14 +2,10 @@ import { useEffect, useRef, useState } from "react"
 
 type Props = {
     onFinished: () => void
-    started: boolean
-    videoRef: React.RefObject<HTMLVideoElement>  // ← 추가
 }
 
 export default function IntroVideo({
-    onFinished,
-    started,
-    videoRef
+    onFinished
 }: Props) {
     const [fadeOut, setFadeOut] = useState(false)
 
@@ -41,9 +37,10 @@ export default function IntroVideo({
             onClick={handleEnd}
         >
             <video
-                ref={videoRef}
                 muted
+                autoPlay
                 playsInline
+                disableRemotePlayback
                 className="intro-video"
                 onEnded={handleEnd}
             >
