@@ -21,13 +21,13 @@
 
   .image-wrapper {
     width: 100%;
-    height: 22rem;
+    height: 25rem;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     img {
-      height: 22rem; // 원하는 높이
+      height: 25rem; // 원하는 높이
       width: auto; // 비율 유지하며 너비 자동 계산
     }
   }

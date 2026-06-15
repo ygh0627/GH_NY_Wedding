@@ -59,8 +59,6 @@ export const Location = () => {
           <div className="heading">자가용</div>
           <div />
           <div className="content">
-            네이버 지도, 카카오 네비, 티맵 등 이용
-            <br />
             <b>용산 로얄파크컨벤션</b> 검색
             <br />
             '전쟁기념관 북문' 지상,지하 주차장 이용

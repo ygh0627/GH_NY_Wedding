@@ -16,7 +16,7 @@
 :root {
   --theme-color: #ff8585;
   --theme-bg-color: #fffff8;
-  --alt-color: #c28080;
+  --alt-color: #282c34;
   --alt-bg-color: #f4f0f0;
   --dark-color: #282c34;
   --dark-grey-color: #d2d2d2;
@@ -150,7 +150,7 @@ body {
 
       .card {
         background-color: var(--light-color);
-        padding: 1rem;
+        padding: 0.2rem 1rem 1rem 1rem;
         border: 1px solid var(--light-grey-color);
         width: 50%;
         display: flex;

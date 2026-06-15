@@ -83,7 +83,6 @@ function App() {
         <LazyDiv className="card-group">
           {/* 메인 커버 섹션 */}
           <Cover />
-
           {/* 모시는 글 섹션 */}
           <Invitation />
         </LazyDiv>

@@ -75,7 +75,7 @@ export const Information2 = () => {
         closeOnClickBackground={true}
       >
         <div className="header">
-          <div className="title">
+          <div style={{ color: "#000000" }} className="title">
             {isGroom ? "신랑측 계좌번호" : "신부측 계좌번호"}
           </div>
         </div>
