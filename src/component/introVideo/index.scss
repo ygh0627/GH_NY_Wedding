@@ -2,34 +2,17 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: #e6dfcf;
 }
 
 .intro-video {
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
+  width: 550%;
+  height: 550%;
+  object-fit: contain;
   transform: translateY(-25px);
-
-  &::-webkit-media-controls,
-  &::-webkit-media-controls-enclosure,
-  ::-webkit-media-controls-panel,
-  &::-webkit-media-controls-overlay-play-button {
-    display: none !important;
-  }
 }
-
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: transparent;
-}
-// background-color: #e5dece;

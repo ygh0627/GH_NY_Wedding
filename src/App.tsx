@@ -25,28 +25,12 @@ import { UploadSection } from "./component/upload"
 function App() {
 
   const [introFinished, setIntroFinished] = useState(false)
-  const [started, setStarted] = useState(false)
-
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  const handleStart = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.play().then(() => {
-      video.muted = false;
-    }).catch(console.error);
-
-    setStarted(true);
-  }
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("scrollTo") === "upload") {
       setIntroFinished(true)
-      setStarted(true)
       console.log(document.getElementById("upload-section"))
       setTimeout(() => {
         document.getElementById("upload-section")?.scrollIntoView({
@@ -60,7 +44,7 @@ function App() {
     return (
       <>
         <IntroVideo
-          started={started}
+          // started={started}
           onFinished={() => setIntroFinished(true)}
         // videoRef={videoRef}
         />
@@ -75,6 +59,8 @@ function App() {
       // />
     )
   }
+
+  // return <IntroVideo onFinished={() => { }} />
 
 
   return (

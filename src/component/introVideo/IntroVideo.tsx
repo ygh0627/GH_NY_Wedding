@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
 type Props = {
     onFinished: () => void
@@ -40,7 +40,6 @@ export default function IntroVideo({
                 muted
                 autoPlay
                 playsInline
-                // disableRemotePlayback
                 className="intro-video"
                 onEnded={handleEnd}
             >
