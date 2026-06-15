@@ -40,7 +40,7 @@ export default function IntroVideo({
                 muted
                 autoPlay
                 playsInline
-                disableRemotePlayback
+                // disableRemotePlayback
                 className="intro-video"
                 onEnded={handleEnd}
             >
@@ -49,7 +49,7 @@ export default function IntroVideo({
                     type="video/mp4"
                 />
             </video>
-            <div className="video-overlay" />
+            {/* <div className="video-overlay" /> */}
         </div>
     )
 }
