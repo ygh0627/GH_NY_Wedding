@@ -1,19 +1,15 @@
 import { Cover } from "./component/cover"
 import { Location } from "./component/location"
 import "./App.scss"
-import { BGEffect } from "./component/bgEffect"
 import { Invitation } from "./component/invitation"
 import { Calendar } from "./component/calendar"
 import { Gallery } from "./component/gallery"
 import { Information } from "./component/information"
 import { GuestBook } from "./component/guestbook"
 import { LazyDiv } from "./component/lazyDiv"
-import { ShareButton } from "./component/shareButton"
 import { STATIC_ONLY } from "./env"
 import IntroVideo from "./component/introVideo/IntroVideo"
 import { useEffect, useRef, useState } from "react"
-import { StartOverlay } from "./component/startOverlay"
-import { supabase } from "./lib/supabase"
 import { UploadSection } from "./component/upload"
 
 /**
@@ -44,23 +40,10 @@ function App() {
     return (
       <>
         <IntroVideo
-          // started={started}
-          onFinished={() => setIntroFinished(true)}
-        // videoRef={videoRef}
-        />
-        {/* <StartOverlay
-          visible={!started}
-          onStart={handleStart}
-        /> */}
+          onFinished={() => setIntroFinished(true)} />
       </>
-      // <IntroVideo
-      //   started={started}
-      //   onFinished={() => setIntroFinished(true)}
-      // />
     )
   }
-
-  // return <IntroVideo onFinished={() => { }} />
 
 
   return (
