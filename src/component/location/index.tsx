@@ -35,11 +35,11 @@ export const Location = () => {
           <div className="content">
             * 지하철 이용시
             <br />
-            ① 6호선 : 삼각지역 12번 출구 (도보 3분)
+            ① 6호선 : 삼각지역 12번 출구 (도보 5분)
             <br />
             ② 4호선 : 삼각지역 1번 출구 (도보 5분)
             <br />
-            ③ 1호선 : 남영역 1번 출구 (도보 7분)
+            ③ 1호선 : 남영역 1번 출구 (도보 13분)
           </div>
           <div />
           <div className="content">

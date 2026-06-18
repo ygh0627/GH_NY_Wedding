@@ -63,11 +63,11 @@ export const UploadSection = () => {
         if (previewImages.length === 0) return
 
         try {
+            setIsUploading(true)
             const remainingFiles = previewImages.map((p) => p.file)
             const compressedFiles = await Promise.all(
                 remainingFiles.map(compressImage)
             )
-            setIsUploading(true)
             const uploadPromises = compressedFiles.map((file, index) => {
                 const ext = file.name.split(".").pop()
                 const fileName = `${crypto.randomUUID()}.${ext}`
