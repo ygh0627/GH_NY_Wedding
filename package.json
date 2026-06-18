@@ -19,6 +19,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "browser-image-compression": "^2.0.2",
     "dayjs": "^1.11.10",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
