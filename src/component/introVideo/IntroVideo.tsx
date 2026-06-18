@@ -23,6 +23,7 @@ export default function IntroVideo({
         >
             <video
                 autoPlay
+                muted
                 playsInline
                 className="intro-video"
                 onEnded={handleEnd}
