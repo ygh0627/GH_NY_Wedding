@@ -8,12 +8,12 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: #e0d9ca;
+  background: #d0c7b8;
 }
 
 .intro-video {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: translateY(-25px);
+  transform: scale(1.05) scaleY(1.23) translateY(-25px);
 }

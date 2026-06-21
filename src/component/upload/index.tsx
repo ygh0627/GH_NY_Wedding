@@ -14,6 +14,9 @@ export const UploadSection = () => {
     // finally에서 사용하는데 선언이 없음
     const [isUploading, setIsUploading] = useState(false)
 
+    const [guestName, setGuestName] = useState("")
+    const [isNameModalOpen, setIsNameModalOpen] = useState(false)
+
     const handleClick = () => {
         inputRef.current?.click()
     }
@@ -152,15 +155,74 @@ export const UploadSection = () => {
                             </button>
                             <button
                                 className="submit-btn"
-                                onClick={handleSubmit}
-                                disabled={isUploading}
+                                onClick={() => {
+                                    setIsNameModalOpen(true)
+                                }}
                             >
-                                {isUploading ? "업로드 중..." : "업로드하기"}
+                                다음
                             </button>
                         </div>
                     </div>
                 </div>
             )}
+            {
+                isNameModalOpen && (
+                    <div
+                        className="modal-overlay"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) {
+                                setIsNameModalOpen(false)
+                            }
+                        }}
+                    >
+                        <div className="modal-content name-modal">
+                            {/* 
+                            <div className="modal-header">
+                                <span className="modal-title">
+                                    사진 업로드
+                                </span>
+                            </div> */}
+
+                            <div className="name-modal-description">
+                                소중한 사진 감사드립니다.
+                                <br />
+                                추첨을 통해 자그마한 선물을
+                                <br />
+                                드리고자 합니다.
+                                <br />
+                                원하시는 경우 성함을 남겨주세요.
+                            </div>
+
+                            <input
+                                className="name-input"
+                                type="text"
+                                placeholder="이름 입력 (선택)"
+                                value={guestName}
+                                onChange={(e) => setGuestName(e.target.value)}
+                            />
+
+                            <div className="modal-actions">
+                                <button
+                                    className="cancel-btn"
+                                    onClick={() => {
+                                        setIsNameModalOpen(false)
+                                    }}
+                                >
+                                    돌아가기
+                                </button>
+
+                                <button
+                                    className="submit-btn"
+                                    onClick={handleSubmit}
+                                    disabled={isUploading}
+                                >
+                                    {isUploading ? "업로드 중..." : "업로드하기"}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
             <h2 className="english">Guest Photos</h2>
 
             <div className="break" />
@@ -168,11 +230,17 @@ export const UploadSection = () => {
             <div style={{ marginBottom: "0" }} className="description">
                 소중한 순간을 함께 남겨주세요.
             </div>
-            <div className="description">
+            <div className="description" style={{ marginBottom: "0" }}>
                 예식 중 촬영해주신 사진을
                 <br />
                 업로드하실 수 있습니다.
             </div>
+            {/* <div className="description">
+                예식 중 촬영해주신 사진을
+                <br />
+                업로드하실 수 있습니다.
+            </div> */}
+
 
             <div className="break" />
 
