@@ -152,4 +152,51 @@
     font-size: 16px;
     margin-bottom: 20px;
   }
+
+  .success-modal {
+    width: 280px;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease;
+  }
+
+  .success-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .success-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .success-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+
+  .success-overlay {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .success-overlay.closing {
+    opacity: 0;
+  }
+
+  .success-modal {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .success-modal.closing {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }

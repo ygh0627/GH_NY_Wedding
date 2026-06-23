@@ -17,22 +17,28 @@ export default function IntroVideo({
         }, 1000) // CSS transition 시간과 맞춤
     }
     return (
-        <div
-            className={`intro-container ${fadeOut ? "fade-out" : ""
-                }`}
-        >
-            <video
-                autoPlay
-                muted
-                playsInline
-                className="intro-video"
-                onEnded={handleEnd}
-            >
-                <source
-                    src="/videos/slot machine_motion_ivory background.mp4"
-                    type="video/mp4"
-                />
-            </video>
+        <div className={`intro-container ${fadeOut ? "fade-out" : ""}`}>
+            <div className="video-wrapper">
+                <button
+                    className="skip-button"
+                    onClick={onFinished}
+                >
+                    Skip
+                </button>
+
+                <video
+                    autoPlay
+                    muted
+                    playsInline
+                    className="intro-video"
+                    onEnded={handleEnd}
+                >
+                    <source
+                        src="/videos/slot machine_motion_ivory background.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+            </div>
         </div>
     )
 }

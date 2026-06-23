@@ -11,11 +11,14 @@ export const UploadSection = () => {
     const [previewImages, setPreviewImages] = useState<
         { id: string; file: File; url: string }[]
     >([])
-    // finally에서 사용하는데 선언이 없음
+
     const [isUploading, setIsUploading] = useState(false)
 
     const [guestName, setGuestName] = useState("")
+    const [guestNumber, setGuestNumber] = useState("")
     const [isNameModalOpen, setIsNameModalOpen] = useState(false)
+    const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
+    const [isSuccessClosing, setIsSuccessClosing] = useState(false)
 
     const handleClick = () => {
         inputRef.current?.click()
@@ -99,10 +102,35 @@ export const UploadSection = () => {
                 return
             }
 
-            alert("업로드 완료!")
-            setIsModalOpen(false)
-            setPreviewImages([])
+            const { error: guestError } = await supabase
+                .from("guest")
+                .insert([
+                    {
+                        name: guestName || null,
+                        number: guestNumber || null,
+                    },
+                ])
 
+            if (guestError) {
+                console.error("guest insert 실패:", guestError)
+                alert("정보 저장에 실패했지만 사진은 업로드되었습니다.")
+                return
+            }
+            setIsSuccessModalOpen(true)
+            setTimeout(() => {
+                setIsSuccessClosing(true)
+
+                setTimeout(() => {
+                    setIsSuccessModalOpen(false)
+                    setIsSuccessClosing(false)
+                }, 300) // fade-out 시간
+            }, 1500)
+            setIsModalOpen(false)
+            setIsNameModalOpen(false)
+            setGuestName("")
+            setGuestNumber("")
+            setPreviewImages([])
+            inputRef.current!.value = ""
         } catch (err) {
             console.error(err)
             alert("업로드 중 오류가 발생했습니다.")
@@ -120,6 +148,7 @@ export const UploadSection = () => {
                         previewImages.forEach((p) => URL.revokeObjectURL(p.url))
                         setPreviewImages([])
                         setIsModalOpen(false)
+                        inputRef.current!.value = ""
                     }
                 }}>
                     <div className="modal-content">
@@ -149,6 +178,7 @@ export const UploadSection = () => {
                                     previewImages.forEach((p) => URL.revokeObjectURL(p.url))
                                     setPreviewImages([])
                                     setIsModalOpen(false)
+                                    inputRef.current!.value = ""
                                 }}
                             >
                                 취소
@@ -176,21 +206,15 @@ export const UploadSection = () => {
                         }}
                     >
                         <div className="modal-content name-modal">
-                            {/* 
-                            <div className="modal-header">
-                                <span className="modal-title">
-                                    사진 업로드
-                                </span>
-                            </div> */}
 
                             <div className="name-modal-description">
-                                소중한 사진 감사드립니다.
+                                소중한 사진 감사드립니다
                                 <br />
                                 추첨을 통해 자그마한 선물을
                                 <br />
-                                드리고자 합니다.
+                                드리고자 합니다
                                 <br />
-                                원하시는 경우 성함을 남겨주세요.
+                                성함과 번호를 남겨주세요
                             </div>
 
                             <input
@@ -199,6 +223,13 @@ export const UploadSection = () => {
                                 placeholder="이름 입력 (선택)"
                                 value={guestName}
                                 onChange={(e) => setGuestName(e.target.value)}
+                            />
+                            <input
+                                className="name-input"
+                                type="number"
+                                placeholder="번호 입력 (선택)"
+                                value={guestNumber}
+                                onChange={(e) => setGuestNumber(e.target.value)}
                             />
 
                             <div className="modal-actions">
@@ -223,24 +254,41 @@ export const UploadSection = () => {
                     </div>
                 )
             }
-            <h2 className="english">Guest Photos</h2>
 
-            <div className="break" />
+            {isSuccessModalOpen && (
+                <div
+                    className={`modal-overlay success-overlay ${isSuccessClosing ? "closing" : ""
+                        }`}
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            setIsSuccessModalOpen(false)
+                        }
+                    }}
+                >
+                    <div className="success-modal">
+                        <div className="success-icon">🎉</div>
 
-            <div style={{ marginBottom: "0" }} className="description">
-                소중한 순간을 함께 남겨주세요.
+                        <div className="success-title">
+                            업로드 완료
+                        </div>
+
+                        <div className="success-desc">
+                            소중한 사진 감사합니다
+                        </div>
+                    </div>
+                </div>
+            )}
+            <h2 className="english">Event</h2>
+
+            <div style={{ marginBottom: "0", marginTop: "0" }} className="description">
+                감사한 마음을 담아 작은 선물을 준비했어요.
             </div>
-            <div className="description" style={{ marginBottom: "0" }}>
-                예식 중 촬영해주신 사진을
-                <br />
-                업로드하실 수 있습니다.
+            <div className="description" style={{ marginBottom: "0", marginTop: "0" }}>
+                촬영해주신 소중한 순간을 업로드해주시면,
             </div>
-            {/* <div className="description">
-                예식 중 촬영해주신 사진을
-                <br />
-                업로드하실 수 있습니다.
-            </div> */}
-
+            <div className="description" style={{ marginBottom: "0", marginTop: "0" }}>
+                소중히 모아 추첨을 통해 선물을 드릴 예정입니다.
+            </div>
 
             <div className="break" />
 

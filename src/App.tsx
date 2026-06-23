@@ -45,7 +45,7 @@ function App() {
     )
   }
 
-
+  // return <IntroVideo onFinished={() => { }} />
   return (
     <div className="background">
       <div className="card-view">
