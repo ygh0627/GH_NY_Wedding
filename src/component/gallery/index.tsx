@@ -380,7 +380,7 @@ export const Gallery = () => {
           </div>
 
           {/* 하단 인디케이터 (점) */}
-          <div className="carousel-indicator">
+          {/* <div className="carousel-indicator">
             {CAROUSEL_ITEMS.map((_, idx) => (
               <button
                 key={idx}
@@ -390,7 +390,7 @@ export const Gallery = () => {
                 }
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="break" />

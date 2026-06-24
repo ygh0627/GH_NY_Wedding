@@ -177,7 +177,7 @@ const KakaoMap = () => {
         </button>
 
         {/* 카카오 내비 */}
-        <button
+        {/* <button
           onClick={() => {
             switch (checkDevice()) {
               case "ios":
@@ -203,7 +203,7 @@ const KakaoMap = () => {
         >
           <img src={knaviIcon} alt="kakao-navi-icon" />
           카카오 내비
-        </button>
+        </button> */}
 
         {/* 티맵 */}
         <button
