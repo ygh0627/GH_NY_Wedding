@@ -431,6 +431,7 @@ export const Gallery = () => {
         </div>
         <div className="footer">
           <Button
+            style={{ paddingTop: "20px", paddingBottom: "20px" }}
             buttonStyle="style2"
             className="bg-light-grey-color text-dark-color"
             onClick={() => modalState[1](false)}
