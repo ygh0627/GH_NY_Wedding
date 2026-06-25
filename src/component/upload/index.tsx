@@ -281,15 +281,21 @@ export const UploadSection = () => {
             <h2 className="english">Event</h2>
 
             <div style={{ marginBottom: "0", marginTop: "0" }} className="description">
-                감사한 마음을 담아 작은 선물을 준비했어요.
+                소중한 순간을
+            </div>
+            <div style={{ marginBottom: "0", marginTop: "0" }} className="description"> 함께 기록해주셔서 감사합니다.</div>
+            <div className="description" style={{ marginBottom: "0", marginTop: "0" }}>
+                여러분의 시선으로 담아주신
             </div>
             <div className="description" style={{ marginBottom: "0", marginTop: "0" }}>
-                촬영해주신 소중한 순간을 업로드해주시면,
+                오늘의 추억을 나눠주세요.
+            </div>
+            <div className="description" style={{ marginBottom: "0", marginTop: "20px" }}>
+                촬영하신 사진이나 영상을 업로드해주시면,
             </div>
             <div className="description" style={{ marginBottom: "0", marginTop: "0" }}>
-                소중히 모아 추첨을 통해 선물을 드릴 예정입니다.
+                추첨을 통해 감사의 마음을 담은 선물을 드립니다.
             </div>
-
             <div className="break" />
 
             <Button onClick={handleClick}>

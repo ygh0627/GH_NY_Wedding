@@ -58,7 +58,7 @@ export const Calendar = () => {
       <h2 className="english">The Wedding Day</h2>
       <div className="break" />
       {/* 예식 일시 표시 */}
-      {WEDDING_DATE.format(WEDDING_DATE_FORMAT)}
+      <span style={{ fontWeight: "600", marginBottom: "3px" }}>{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</span>
 
       {/* 달력 영역 */}
       <div className="calendar-wrapper">

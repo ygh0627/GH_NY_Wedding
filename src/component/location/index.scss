@@ -123,4 +123,12 @@
       line-height: 1.4;
     }
   }
+  .bus-line {
+    display: flex;
+    gap: 0.3em;
+  }
+
+  .bus-label {
+    white-space: nowrap; /* 레이블은 줄바꿈 안 되게 */
+  }
 }
