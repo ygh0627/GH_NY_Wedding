@@ -37,7 +37,7 @@
   object-fit: contain;
   position: relative;
   z-index: 1;
-  transform: translateY("25px");
+  transform: translateY(-30px);
 }
 
 .landing-screen {
@@ -89,6 +89,9 @@
       }
     }
   }
+  // .video-wrapper {
+  //   transform: translateY("50px");
+  // }
 
   .icon-card {
     width: 62px;
