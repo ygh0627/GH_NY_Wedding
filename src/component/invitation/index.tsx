@@ -37,7 +37,7 @@ export const Invitation = () => {
         <div style={{ marginBottom: "0rem", marginTop: "0.5rem" }} className="content">소나기가 내릴 땐 든든한 우산이 되어</div>
         <div style={{ marginTop: "0.5rem", marginBottom: "0.7rem" }} className="content">평생을 함께 나아가겠습니다.</div>
         <div style={{ marginBottom: "0rem" }} className="content">9월의 열아홉 번째 날,</div>
-        <div style={{ marginTop: "0.5rem" }} className="content">귀한 발걸음으로 저희의 시작을 축복해 주세요.</div>
+        <div style={{ marginTop: "0.5rem", marginBottom: "1.5rem" }} className="content">귀한 발걸음으로 저희의 시작을 축복해 주세요.</div>
 
         {/* 혼주 및 신랑 정보 */}
         <div style={{ marginBottom: "0rem" }} className="name">
@@ -91,20 +91,24 @@ export const Invitation = () => {
                   <div className="relation">{relation}</div>
                   <div>{name}</div>
                   <div>
-                    {/* 전화 걸기 */}
-                    <PhoneIcon
-                      className="flip icon"
-                      onClick={() => {
-                        window.open(`tel:${phone}`, "_self")
-                      }}
-                    />
-                    {/* 문자 보내기 */}
-                    <EnvelopeIcon
-                      className="icon"
-                      onClick={() => {
-                        window.open(`sms:${phone}`, "_self")
-                      }}
-                    />
+                    {relation !== "신랑" && (
+                      <>
+                        {/* 전화 걸기 */}
+                        <PhoneIcon
+                          className="flip icon"
+                          onClick={() => {
+                            window.open(`tel:${phone}`, "_self")
+                          }}
+                        />
+                        {/* 문자 보내기 */}
+                        <EnvelopeIcon
+                          className="icon"
+                          onClick={() => {
+                            window.open(`sms:${phone}`, "_self")
+                          }}
+                        />
+                      </>
+                    )}
                   </div>
                 </Fragment>
               ),

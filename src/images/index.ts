@@ -23,6 +23,7 @@ import image21 from "./image21.webp"
 import image22 from "./image22.webp"
 import image23 from "./image23.webp"
 import image24 from "./image24.webp"
+import image25 from "./image25.webp"
 
 /**
  * 메인 커버 이미지
@@ -34,27 +35,28 @@ export const COVER_IMAGE = coverImage
  */
 export const GALLERY_IMAGES = [
   image1,
-  image2,
   image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
+  image2,
   image16,
-  image17,
-  image18,
-  image19,
+  image6,
+  image5,
+  image11, //
+  image7,
+  image8, //
+  image9, //
+  image13, //
+  image4,
   image20,
-  image21,
-  image22,
-  image23,
-  image24,
+  image25,
+  image10,
+  //
+  image14,
+  image18, //
+  image22, //
+  image24, //
+  image23, //
+  image21, //
+  image12,
+  image15,
+  image17,
 ]
